@@ -320,7 +320,7 @@ body {
 
 /* Search Bar */
 .search-bar {
-  width: 100%;
+  width: 90%;
   max-width: 450px;
   margin: 0 auto 30px auto;
   display: flex;

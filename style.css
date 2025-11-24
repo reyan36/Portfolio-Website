@@ -255,6 +255,8 @@ p span {
   /* forces new line for the span */
   margin-top: 1rem;
   /* optional spacing between the two sections */
+      padding-right: 10px;
+    padding-left: 10px;
 }
 
 

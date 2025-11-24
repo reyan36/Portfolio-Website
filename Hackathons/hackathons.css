@@ -258,7 +258,7 @@ html, body {
     gap: 12px;
   }
   .search-bar {
-    max-width: 100%;
+    max-width: 90%;
     width: 100%;
   }
 }
