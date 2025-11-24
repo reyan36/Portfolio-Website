@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | RA</title>
+
+  <!-- Fonts & Icons (same as yours) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body class="grid-background">
+  <!-- custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>
+
+  <!-- NAVBAR (unchanged classes and structure) -->
+  <nav class="simple-navbar">
+<div class="nav-left">
+  <a href="../index.html" class="home-link">RA</a>
+  <span class="sub-text">PORTFOLIO'25</span>
+</div>
+
+
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-right">
+      <li><a href="/Hackathons/hackathons.html">Hackathons</a></li>
+      <li><a href="/Articles/article.html">Articles</a></li>
+      <li><a href="/Contact/contact.html">Contact</a></li>
+      <li><a href="#" class="button"><span class="button-span">Resume</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE CONTENT GOES HERE -->
+<main class="contact-wrapper">
+  <section class="contact-hero">
+    <h1 class="contact-title">Want To Get In Touch ?</h1>
+    <p class="contact-sub">
+      Whether it’s a collab, hackathon team, or a cool idea — drop me a line.
+    </p>
+  </section>
+
+  <section class="contact-grid">
+    <!-- Form -> posts to sendMail.php -->
+    <form id="contactForm" class="contact-card" method="POST" action="sendMail.php" autocomplete="on">
+      <h2>Send a message</h2>
+
+      <!-- Honeypot (bots fill this; humans never see it) -->
+      <input type="text" id="trap" name="trap" style="display:none;" tabindex="-1" autocomplete="off" />
+
+      <!-- Optional: helpful context on your end -->
+      <input type="hidden" id="page_source" name="page_source" value="RA Portfolio Contact" />
+
+      <label class="input-label" for="name">Your name</label>
+      <input class="input-box" id="name" name="name" type="text" placeholder="Jerry Maguire" required>
+
+      <label class="input-label" for="email">Your email</label>
+      <input class="input-box" id="email" name="email" type="email" placeholder="you@example.com" required>
+
+      <label class="input-label" for="message">Message</label>
+      <textarea class="input-box textarea" id="message" name="message" rows="6" placeholder="Write your message here" required></textarea>
+
+      <!-- simple +/– verification (front-end check only) -->
+      <div class="captcha-row">
+        <span id="captchaQuestion" class="captcha-q">5 + 7 = ?</span>
+        <input class="input-box captcha-input" id="captchaAnswer" type="number" inputmode="numeric" placeholder="Answer" required>
+      </div>
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
+
+      <button type="submit" class="button" style="width:100%;"><span>Send Message</span></button>
+    </form>
+
+    <!-- Reveal email after a quick check (optional, not used by PHP) -->
+    <div class="contact-card alt">
+      <h2>Prefer email first?</h2>
+      <p class="small-grey">Solve a question to reveal my address.</p>
+
+      <div class="captcha-reveal">
+        <span id="revealQuestion" class="captcha-q">3 − 1 = ?</span>
+        <input class="input-box captcha-input" id="revealAnswer" type="number" inputmode="numeric" placeholder="Answer">
+        <button id="revealBtn" class="button"><span>Reveal</span></button>
+      </div>
+
+      <div id="emailReveal" class="email-reveal" hidden>
+        <div class="email-chip">
+          <i class="fa-regular fa-envelope"></i>
+          <!-- CHANGE THIS to your real email -->
+          <span id="myEmail">reyanarshad36@gmail.com</span>
+          <button id="copyEmail" class="chip-copy" title="Copy email"><i class="fa-regular fa-clone"></i></button>
+        </div>
+        <p class="tiny-note">Note: Include “Portfolio Contact” in the subject for faster replies.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <!-- Your script -->
+  <script src="contact.js"></script>
+</body>
+</html>

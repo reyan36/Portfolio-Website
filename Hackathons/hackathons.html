@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hackathons | RA</title>
+
+  <!-- Fonts & Icons (same as yours) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="hackathons.css">
+</head>
+<body class="grid-background">
+  <!-- custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>
+
+  <!-- NAVBAR (unchanged classes and structure) -->
+  <nav class="simple-navbar">
+<div class="nav-left">
+  <a href="../index.html" class="home-link">RA</a>
+  <span class="sub-text">PORTFOLIO'25</span>
+</div>
+
+
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-right">
+      <li><a href="/Hackathons/hackathons.html">Hackathons</a></li>
+      <li><a href="/Articles/article.html">Articles</a></li>
+      <li><a href="/Contact/contact.html">Contact</a></li>
+      <li><a href="#" class="button"><span class="button-span">Resume</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE CONTENT GOES HERE -->
+  <!-- CONTENT -->
+  <section class="hack-section">
+    <header class="hack-header">
+      <h1 class="hack-title">Hackathons</h1>
+      <p class="hack-sub">From problem-solving contests to teaching cohorts and product builds.</p>
+
+      <div class="hack-controls">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchHack" placeholder="Search hackathon name, role, stack…">
+        </div>
+        <div class="filter-pills">
+          <button class="pill active" data-filter="all">All</button>
+          <button class="pill" data-filter="competitive">Competitive Coding</button>
+          <button class="pill" data-filter="teaching">Teaching & Mentoring</button>
+          <button class="pill" data-filter="build">Build Projects</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cards grid -->
+    <div class="hack-grid" id="hackGrid">
+      <!-- Competitive -->
+      <article class="hack-card" data-type="competitive" data-keywords="leetcode weekly contest binary search">
+        <div class="hack-badge competitive"><i class="fa-solid fa-trophy"></i> Competitive</div>
+        <h3 class="hack-name">Calico Fall</h3>
+        <p class="hack-meta"><i class="fa-regular fa-calendar"></i> Nov 2025 • Team of 3</p>
+        <p class="hack-role"><strong>Role:</strong> Contestant</p>
+        <p class="hack-desc">Solved 3 Problems Out of 12. Ranked 40 Out of 1092.</p>
+        <div class="hack-tags">
+          <span>Python</span><span>Problem Solving</span>
+        </div>
+        <div class="hack-links">
+          <a href="https://calico.berkeley.edu/" target="_blank"><i class="fa-solid fa-link"></i> Link</a>
+        </div>
+      </article>
+
+      <!-- Teaching -->
+      <article class="hack-card" data-type="teaching" data-keywords="code in place mentoring cs teaching">
+        <div class="hack-badge teaching"><i class="fa-solid fa-chalkboard-user"></i> Teaching</div>
+        <h3 class="hack-name">Code in Place Section Leader '25</h3>
+        <p class="hack-meta"><i class="fa-regular fa-calendar"></i> Jun 2025 • 10+ Learners</p>
+        <p class="hack-role"><strong>Role:</strong> Section Leader & Mentor</p>
+        <p class="hack-desc">Ran weekly sessions, code reviews, and office hours. Emphasized fundamentals, debugging, and peer learning.</p>
+        <div class="hack-tags">
+          <span>Python</span><span>Teaching</span><span>Debugging</span>
+        </div>
+        <div class="hack-links">
+          <a href="https://digitalcredential.stanford.edu/check/31F095A48FA5BE141F7F5422690F9E228392F499EB40A0F44EEB312ED5BC570ASjg0SWRINWQ4bjM3M3J4VmtmNGllSWp0SmVLK3dZSGJZaWtJZVdLSS9YYkcrQ2Iy" target="_blank"><i class="fa-regular fa-file-lines"></i> Certificate</a>
+        </div>
+      </article>
+            <!-- Build -->
+      <article class="hack-card" data-type="build" data-keywords="devpost ai ml hackathon build">
+        <div class="hack-badge build"><i class="fa-solid fa-screwdriver-wrench"></i> Build</div>
+        <h3 class="hack-name">Agentic AI Hackathon with IBM watsonx Orchestrate</h3>
+        <p class="hack-meta"><i class="fa-regular fa-calendar"></i> Nov 2025 • Team of 4</p>
+        <p class="hack-role"><strong>Role:</strong> Lead & Dev</p>
+        <p class="hack-desc">Smart FAQ assistant built with IBM Watsonx Orchestrate for businesses.</p>
+        <div class="hack-tags">
+          <span>IBM Orchestrate</span><span>Vercel</span><span>lablabAi</span>
+        </div>
+        <div class="hack-links">
+          <a href="https://faq-mate.vercel.app/" target="_blank"><i class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/FAQ-Mate" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </article>
+      <!-- Build -->
+      <article class="hack-card" data-type="build" data-keywords="devpost ai ml hackathon build">
+        <div class="hack-badge build"><i class="fa-solid fa-screwdriver-wrench"></i> Build</div>
+        <h3 class="hack-name">AI Genesis</h3>
+        <p class="hack-meta"><i class="fa-regular fa-calendar"></i> Nov 2025 • Team of 2</p>
+        <p class="hack-role"><strong>Role:</strong> Front-End Dev & Manager</p>
+        <p class="hack-desc">Made an web application to provide accurate translations of English legal texts into Arabic.</p>
+        <div class="hack-tags">
+          <span>Gemini</span><span>Python</span><span>lablabAi</span>
+        </div>
+        <div class="hack-links">
+          <a href="https://lexiverselegaltranslator.vercel.app/" target="_blank"><i class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/lexiverselegaltranslator" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </article>
+
+
+  <!-- Optional tiny helper (filter + search) -->
+  <script>
+    const pills = document.querySelectorAll('.pill');
+    const cards = document.querySelectorAll('.hack-card');
+    const input = document.getElementById('searchHack');
+
+    let active = 'all';
+    function applyFilter() {
+      const q = (input?.value || '').toLowerCase();
+      cards.forEach(c => {
+        const type = c.getAttribute('data-type');
+        const keys = (c.getAttribute('data-keywords') || '').toLowerCase();
+        const name = c.querySelector('.hack-name')?.textContent.toLowerCase() || '';
+        const txt = [keys, name].join(' ');
+        const typeMatch = (active === 'all') || (type === active);
+        const textMatch = !q || txt.includes(q);
+        c.style.display = (typeMatch && textMatch) ? '' : 'none';
+      });
+    }
+
+    pills.forEach(p => p.addEventListener('click', () => {
+      pills.forEach(pp => pp.classList.remove('active'));
+      p.classList.add('active');
+      active = p.getAttribute('data-filter');
+      applyFilter();
+    }));
+
+    input?.addEventListener('input', applyFilter);
+  </script>
+
+  <!-- Your script -->
+  <script src="hackathons.js"></script>
+</body>
+</html>

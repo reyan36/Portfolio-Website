@@ -1,0 +1,594 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #ffff;
+
+}
+
+/* Cursor */
+/* Hide default cursor */
+body {
+  cursor: none;
+}
+
+/* The small main dot */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* The trailing element */
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+  z-index: 9998;
+}
+
+
+/* Grid background */
+.grid-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  /* White background */
+  overflow:hidden;
+}
+
+.grid-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* Grid lines in black with opacity */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  /* bigger boxes */
+  opacity: 0.6;
+  /* line visibility */
+  pointer-events: none;
+  animation: fadeGrid 3s infinite alternate;
+}
+
+.simple-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.nav-left {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #555;
+  /* light grey */
+  display: flex;
+  flex-direction: column;
+  /* stack text vertically */
+  line-height: 1.1;
+  /* tighter spacing */
+}
+
+.nav-left .sub-text {
+  font-weight: 400;
+  /* lighter */
+  font-size: 0.9rem;
+  color: #777;
+  /* slightly lighter grey */
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.nav-right {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  align-items: center;
+  /* ensure vertical alignment */
+}
+
+.nav-right li {
+  display: flex;
+  /* ensures li wraps a tags correctly */
+  align-items: center;
+  display: inline-block;
+  /* ensure li wraps the a */
+}
+
+.nav-right li a {
+  display: inline-flex;
+  /* inline-flex ensures padding works and hover/cursor works */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: #555;
+  transition: color 0.3s;
+  cursor: pointer;
+  /* ensure pointer shows */
+}
+
+.nav-right li a:hover {
+  color: #000;
+}
+
+/* Button already has cursor pointer, ensure it is inline-flex too */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  background-color: #151515;
+  color: #eee;
+  border-radius: 7px;
+  font-weight: 600;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.button-span {
+  color: #eeeeeeee;
+}
+
+.button:hover {
+  background-color: #1a1a1a;
+  /* very subtle darkening */
+}
+
+.button:hover .button-span {
+  color: #fff;
+  /* text slightly brighter */
+}
+
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+  color: #111;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8rem;
+}
+
+.hero h1 {
+  font-family: "Staatliches", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 6px;
+  font-weight: 500;
+
+}
+
+
+.hero h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1.6px;
+  color: #444;
+  margin-top: -1rem;
+}
+
+.hero p {
+  font-family: "Space Grotesk", sans-serif;
+  max-width: 800px;
+  color: #555;
+  margin-top: 1.6rem;
+  font-size: 1.2rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero-buttons span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+}
+
+.social-bar {
+  position: fixed;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.social-bar a {
+  color: #303030;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-bar a:hover {
+  color: #000000;
+  /* your accent color */
+
+}
+
+p {
+  text-align: left;
+  /* left-align the whole paragraph */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+p span {
+  display: block;
+  /* forces new line for the span */
+  margin-top: 1rem;
+  /* optional spacing between the two sections */
+}
+
+
+
+/* MOBILE ONLY: pin social bar to bottom of viewport */
+@media (max-width: 768px) {
+  .hero p {
+    font-family: "Space Grotesk", sans-serif;
+    max-width: 600px;
+    color: #555;
+    margin-top: 1.6rem;
+    font-size: 1.2rem;
+  }
+
+  .hero h1 {
+    font-family: "Staatliches", sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+    font-weight: 500;
+
+  }
+
+  .hero h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1.6px;
+    color: #444;
+    margin-top: -1rem;
+  }
+
+  .social-bar {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .social-bar a {
+    font-size: 2rem;
+  }
+  .grid-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  /* White background */
+  overflow:scroll;
+}
+
+}
+
+@media (max-width: 600px) {
+  .hero p {
+    font-family: "Space Grotesk", sans-serif;
+    max-width: 500px;
+    color: #555;
+    margin-top: 1.6rem;
+    font-size: 1.1rem;
+  }
+
+  .hero h1 {
+    font-family: "Staatliches", sans-serif;
+    font-size: 3.2rem;
+    letter-spacing: 6px;
+    font-weight: 500;
+
+  }
+
+  .hero h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 1.6px;
+    color: #444;
+    margin-top: -1rem;
+  }
+
+  .social-bar {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .social-bar a {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 530px) {
+
+  .hero p {
+    font-family: "Space Grotesk", sans-serif;
+    max-width: 500px;
+    color: #555;
+    margin-top: 1.6rem;
+    font-size: 1rem;
+
+  }
+
+  .hero h1 {
+    font-family: "Staatliches", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 6px;
+    font-weight: 500;
+
+  }
+
+  .hero h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1.6px;
+    color: #444;
+    margin-top: -1rem;
+  }
+
+  .social-bar {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .social-bar a {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 490px) {
+  .hero p {
+    text-align: center;
+    max-width: 360px;
+    margin: 1rem auto 0;
+    font-size: 1rem;
+    margin-top: 1.9rem;
+  }
+    .hero h1 {
+    font-family: "Staatliches", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 6px;
+    font-weight: 500;
+
+  }
+
+  .hero h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 1.6px;
+    color: #444;
+    margin-top: -1rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto; /* restore normal cursor */
+  }
+
+  .cursor-dot,
+  .cursor-trail {
+    display: none !important; /* hide custom cursor elements */
+  }
+}
+
+
+/* HAMBURGER BUTTON (Hidden on Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s ease;
+}
+
+/* MOBILE NAVBAR */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    margin-right: 8%;
+  }
+
+  .nav-right {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px);
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .nav-right.open {
+    display: flex;
+  }
+
+  .nav-right li a {
+    font-size: 1.2rem;
+    padding-top: -2px;
+    padding-bottom: -2px;
+    padding-left: -4px;
+    padding-right: -4px;
+  }
+
+  .simple-navbar {
+    justify-content: space-between;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+  }
+
+  /* Animate hamburger → X */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+.button{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+}
+
+
+
+
+
+/*--- Old Mac Popup Window ---*/
+.mac-popup {
+    background: white;
+    border: 3px solid black;
+    box-shadow: 4px 4px 0 black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.25s ease;
+    z-index: 999;
+    font-family: sans-serif;
+}
+
+/* Window Header */
+.mac-header {
+    background: #e5e5e5;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+}
+
+.mac-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: white;
+    border: 2px solid black;
+    cursor: pointer;
+    padding: 2px 6px;
+}
+
+/* Animation Box */
+.animation-box {
+    width: 220px;
+    height: 180px;
+    background: url('your-animation.gif') no-repeat center;
+    background-size: contain;
+}
+
+/* Popup Visible */
+.mac-popup.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* MUSIC NOTE FLOAT ANIMATION */
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+#note1 {
+    animation: floatUp 2s infinite ease-in-out;
+}
+
+#note2 {
+    animation: floatUp 2.5s infinite ease-in-out;
+}
+
+/* ARM TYPING ANIMATION */
+@keyframes typeLeft {
+    0%,100% { transform: rotate(0deg); }
+    50% { transform: rotate(-15deg); }
+}
+@keyframes typeRight {
+    0%,100% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+}
+
+#leftArm {
+    transform-origin: 110px 70px;
+    animation: typeLeft 0.6s infinite;
+}
+
+#rightArm {
+    transform-origin: 110px 70px;
+    animation: typeRight 0.6s infinite;
+}

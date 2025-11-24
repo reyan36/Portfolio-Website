@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles | RA</title>
+  <link rel="stylesheet" href="article.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+</head>
+
+<body class="grid-background">
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>
+  <nav class="simple-navbar">
+    <div class="nav-left">
+      <a href="../index.html" class="home-link">RA</a>
+      <span class="sub-text">PORTFOLIO'25</span>
+    </div>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-right">
+      <li><a href="/Hackathons/hackathons.html">Hackathons</a></li>
+      <li><a href="/Articles/article.html">Articles</a></li>
+      <li><a href="/Contact/contact.html">Contact</a></li>
+      <li><a href="#" class="button"><span class="button-span">Resume</span></a></li>
+    </ul>
+  </nav>
+  <section class="articles-section">
+    <h1 class="article-title">Articles</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search Article Name...">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <table class="articles-table">
+      <thead>
+        <tr>
+          <th>Article Name</th>
+          <th>Date Published</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+
+      <tbody>
+                <!-- Row 1 -->
+        <tr data-id="article1">
+          <td data-label="Article Name">System Design Essential Concepts</td>
+          <td data-label="Date Published">Nov 21, 2025</td>
+          </td>
+          <td data-label="Link">
+            <a class="linkedin-btn"
+              href="https://www.linkedin.com/pulse/system-design-essential-concepts-reyan-arshad-lctbe"
+              target="_blank">
+              <i class="fa-brands fa-linkedin"></i> View
+            </a>
+          </td>
+        </tr>
+                <!-- Row 1 -->
+        <tr data-id="article1">
+          <td data-label="Article Name">Understanding the Unix Philosophy</td>
+          <td data-label="Date Published">Nov 17, 2025</td>
+          </td>
+          <td data-label="Link">
+            <a class="linkedin-btn"
+              href="https://www.linkedin.com/pulse/understanding-unix-philosophy-reyan-arshad-tseve"
+              target="_blank">
+              <i class="fa-brands fa-linkedin"></i> View
+            </a>
+          </td>
+        </tr>
+        <!-- Row 1 -->
+        <tr data-id="article1">
+          <td data-label="Article Name">Exploring Neuroscience: Brain-Computer Interfaces</td>
+          <td data-label="Date Published">Nov 13, 2025</td>
+          </td>
+          <td data-label="Link">
+            <a class="linkedin-btn"
+              href="https://www.linkedin.com/pulse/exploring-neuroscience-brain-computer-interfaces-reyan-arshad-2knue"
+              target="_blank">
+              <i class="fa-brands fa-linkedin"></i> View
+            </a>
+          </td>
+        </tr>
+        <!-- Row 1 -->
+        <tr data-id="article1">
+          <td data-label="Article Name">Exploring Quantum Computing: Bits Vs Qubits</td>
+          <td data-label="Date Published">Nov 5, 2025</td>
+          </td>
+          <td data-label="Link">
+            <a class="linkedin-btn"
+              href="https://www.linkedin.com/pulse/exploring-quantum-computing-bits-vs-qubits-reyan-arshad-y3s3e"
+              target="_blank">
+              <i class="fa-brands fa-linkedin"></i> View
+            </a>
+          </td>
+        </tr>
+        <!-- Row 1 -->
+        <tr data-id="article1">
+          <td data-label="Article Name">Impact Of AI On Humanoid Robots</td>
+          <td data-label="Date Published">Nov 1, 2025</td>
+          </td>
+          <td data-label="Link">
+            <a class="linkedin-btn" href="https://www.linkedin.com/pulse/impact-ai-humanoid-robots-reyan-arshad-t0bpe"
+              target="_blank">
+              <i class="fa-brands fa-linkedin"></i> View
+            </a>
+          </td>
+        </tr>
+
+        <!-- Row 1 -->
+        <tr data-id="article1">
+          <td data-label="Article Name">Why Thinking Like a Problem Solver Is Crucial</td>
+          <td data-label="Date Published">Oct 28, 2025</td>
+          </td>
+          <td data-label="Link">
+            <a class="linkedin-btn"
+              href="https://www.linkedin.com/pulse/why-thinking-like-problem-solver-crucial-reyan-arshad-2r7ze"
+              target="_blank">
+              <i class="fa-brands fa-linkedin"></i> View
+            </a>
+          </td>
+        </tr>
+
+        <!-- Row 2 -->
+        <tr data-id="article1">
+          <td data-label="Article Name">What Is Serverless Computing ?</td>
+          <td data-label="Date Published">Oct 25, 2025</td>
+
+
+          </td>
+          <td data-label="Link">
+            <a class="linkedin-btn" href="https://www.linkedin.com/pulse/what-serverless-computing-reyan-arshad-ke89e"
+              target="_blank">
+              <i class="fa-brands fa-linkedin"></i> View
+            </a>
+          </td>
+        </tr>
+
+
+
+
+      </tbody>
+    </table>
+  </section>
+  <script src="article.js"></script>
+</body>
+
+</html>

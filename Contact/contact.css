@@ -1,0 +1,193 @@
+/* Base reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #ffff;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Hide default cursor and use custom */
+body { cursor: none; }
+.cursor-dot {
+  position: fixed; top: 0; left: 0;
+  width: 6px; height: 6px; background: #000;
+  border-radius: 50%; pointer-events: none;
+  transform: translate(-50%, -50%); z-index: 9999;
+}
+.cursor-trail {
+  position: fixed; top: 0; left: 0;
+  width: 25px; height: 25px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 50%; pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all .15s ease-out; z-index: 9998;
+}
+
+/* Grid background */
+.grid-background {
+  position: relative; width: 100%; min-height: 100%;
+  background-color: #ffffff; overflow: hidden;
+}
+.grid-background::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 100px 100px; opacity: 0.6; pointer-events: none;
+}
+
+/* Navbar (same look and spacing) */
+.simple-navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 30px; font-family: 'Space Grotesk', sans-serif;
+  position: sticky; top: 0; z-index: 1000; background: transparent;
+}
+.nav-left {
+  font-weight: bold; font-size: 2rem; color: #555; line-height: 1.1; display: flex; flex-direction: column;
+}
+.nav-left .sub-text {
+  font-weight: 400; font-size: 0.9rem; color: #777; letter-spacing: 1px; margin-top: 2px;
+}
+
+.nav-right { list-style: none; display: flex; gap: 50px; margin: 0; padding: 0; align-items: center;    font-size: 1.2rem; }
+.nav-right li { display: inline-block; }
+.nav-right li a {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; font-weight: bold; color: #555; transition: color .3s; cursor: pointer;
+}
+.nav-right li a:hover { color: #000; }
+
+/* Button style (as in your site) */
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 15px 20px; border: none; outline: none;
+  background-color: #151515; color: #eee; border-radius: 7px;
+  font-weight: 600; transition: background-color .25s ease, color .25s ease;
+}
+.button-span { color: #eee; }
+.button:hover { background-color: #1a1a1a; }
+.button:hover .button-span { color: #fff; }
+
+/* Hamburger (hidden on desktop) */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 200; }
+.hamburger span { width: 26px; height: 3px; background-color: #333; transition: .3s ease; }
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  .hamburger { display: flex; margin-right: 8%; }
+  .nav-right {
+    position: absolute; top: 70px; right: 0; width: 100%;
+    background: rgba(255,255,255,0.9); backdrop-filter: blur(6px);
+    display: none; flex-direction: column; gap: 20px; padding: 20px 0;
+    text-align: center; border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .nav-right.open { display: flex; }
+
+  .simple-navbar {
+    justify-content: space-between; padding: 15px 20px;
+    position: fixed; width: 100%; top: 0; left: 0;
+    background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); z-index: 999;
+  }
+
+  /* Hamburger to X animation */
+  .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Smaller button padding on mobile */
+  .button { padding: 12px 8px; }
+
+  /* restore native cursor on touch devices */
+  body { cursor: auto; }
+  .cursor-dot, .cursor-trail { display: none !important; }
+}
+/* ---------- Contact page ---------- */
+.contact-wrapper {
+  padding: 120px 24px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-hero { text-align: left; margin-bottom: 24px; }
+.contact-title {
+  font-family: "Staatliches", sans-serif;
+  font-size: 3rem; letter-spacing: 4px; color: #111; margin: 0 0 8px;
+}
+.contact-sub { font-family: "Space Grotesk", sans-serif; color: #444; margin: 0 0 18px; }
+
+.contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
+.contact-card {
+  background: rgba(255,255,255,0.75); backdrop-filter: blur(6px);
+  border: 2px solid rgba(0,0,0,0.3); border-radius: 12px; padding: 24px;
+}
+.contact-card h2 { margin: 0 0 14px; font-family: "Space Grotesk", sans-serif; color: #111; font-size: 1.4rem; }
+
+.input-label { display: block; font-size: 0.95rem; color: #555; margin: 14px 0 6px; }
+.input-box {
+  width: 70%; font-size: 1rem; padding: 12px 14px; border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.12); background: #fff; color: #111; outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.input-box:focus { border-color: #151515; box-shadow: 0 0 0 3px rgba(0,0,0,0.06); }
+.textarea { resize: vertical; min-height: 140px; }
+
+.captcha-row {
+  display: grid; grid-template-columns: auto 120px; gap: 10px; align-items: center;
+  margin: 14px 0 10px;
+}
+.captcha-q {
+  font-family: "Space Grotesk", sans-serif; font-weight: 700; color: #111;
+  padding: 10px 12px; border-radius: 8px; border: 1px dashed rgba(0,0,0,0.15); background: #fff;
+}
+.captcha-input { text-align: center; }
+.captcha-hint { margin: 2px 0 12px; color: #777; font-size: 0.9rem; }
+
+.form-status { margin-top: 12px; font-size: 0.95rem; color: #333; }
+
+.contact-card.alt .small-grey { color: #555; font-size: 0.95rem; margin-top: 2px; }
+.captcha-reveal {
+  display: grid; grid-template-columns: 1fr 120px auto; gap: 10px; align-items: center;
+  margin: 16px 0 12px;
+}
+.email-reveal { margin-top: 8px; }
+.email-chip {
+  display: inline-flex; align-items: center; gap: 10px; padding: 10px 12px;
+  border-radius: 999px; border: 1px solid rgba(0,0,0,0.12); background: #fff; color: #111;
+}
+.email-chip i { font-size: 1rem; }
+.chip-copy { border: none; background: transparent; cursor: pointer; padding: 6px; border-radius: 8px; }
+.tiny-note { color: #777; font-size: 0.85rem; margin-top: 10px; }
+
+
+/* Responsive */
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+/* --- Mobile scrolling fixes --- */
+html, body {
+  height: auto;          /* allow page to grow */
+  min-height: 100%;
+  overflow-y: auto;      /* show scrollbar when needed */
+  -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
+}
+
+.grid-background {
+  min-height: 100vh;     /* full viewport height baseline */
+  overflow: visible;     /* don't clip children */
+}
+
+/* If the mobile dropdown is tall, let it scroll independently */
+@media (max-width: 768px) {
+  .nav-right {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+}
+.home-link {
+  text-decoration: none;
+  color: inherit;  /* Inherits color from the surrounding text */
+  font-weight: bold;  /* If you want it to stand out more */
+}
+
+.home-link:hover {
+  text-decoration: underline;  /* Optional hover effect */
+}
