@@ -275,7 +275,7 @@ html, body {
     -webkit-overflow-scrolling: touch;
     padding-bottom: 6px;
     /* subtle fade edges so users know it scrolls */
-    mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+    
   }
   .filter-pills::-webkit-scrollbar { height: 6px; }
   .filter-pills::-webkit-scrollbar-thumb { background: rgba(0,0,0,.15); border-radius: 8px; }

@@ -228,6 +228,7 @@ body {
   flex-direction: column;
   gap: 20px;
   z-index: 10;
+  align-items: center;
 }
 
 .social-bar a {
@@ -255,8 +256,7 @@ p span {
   /* forces new line for the span */
   margin-top: 1rem;
   /* optional spacing between the two sections */
-      padding-right: 10px;
-    padding-left: 10px;
+
 }
 
 
@@ -279,6 +279,14 @@ p span {
 
   }
 
+p span {
+  display: block;
+  /* forces new line for the span */
+  margin-top: 1rem;
+  /* optional spacing between the two sections */
+  padding-right: 10px;
+  padding-left: 10px;
+}
   .hero h2 {
     font-family: "Space Grotesk", sans-serif;
     font-size: 1.8rem;
@@ -551,7 +559,6 @@ p span {
 .animation-box {
     width: 220px;
     height: 180px;
-    background: url('your-animation.gif') no-repeat center;
     background-size: contain;
 }
 
