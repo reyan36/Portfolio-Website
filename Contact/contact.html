@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | RA</title>
 
   <!-- Fonts & Icons (same as yours) -->
@@ -16,6 +17,7 @@
   <!-- Your stylesheet -->
   <link rel="stylesheet" href="contact.css">
 </head>
+
 <body class="grid-background">
   <!-- custom cursor -->
   <div class="cursor-dot"></div>
@@ -23,10 +25,10 @@
 
   <!-- NAVBAR (unchanged classes and structure) -->
   <nav class="simple-navbar">
-<div class="nav-left">
-  <a href="../index.html" class="home-link">RA</a>
-  <span class="sub-text">PORTFOLIO'25</span>
-</div>
+    <div class="nav-left">
+      <a href="../index.html" class="home-link">RA</a>
+      <span class="sub-text">PORTFOLIO'25</span>
+    </div>
 
 
     <div class="hamburger">
@@ -42,70 +44,92 @@
   </nav>
 
   <!-- PAGE CONTENT GOES HERE -->
-<main class="contact-wrapper">
-  <section class="contact-hero">
-    <h1 class="contact-title">Want To Get In Touch ?</h1>
-    <p class="contact-sub">
-      Whether it’s a collab, hackathon team, or a cool idea — drop me a line.
-    </p>
-  </section>
+  <main class="contact-wrapper">
+    <section class="contact-hero">
+      <h1 class="contact-title">Want To Get In Touch ?</h1>
+      <p class="contact-sub">
+        Whether it’s a collab, hackathon team, or a cool idea — drop me a line.
+      </p>
+    </section>
 
-  <section class="contact-grid">
-    <!-- Form -> posts to sendMail.php -->
-    <form id="contactForm" class="contact-card" method="POST" action="sendMail.php" autocomplete="on">
-      <h2>Send a message</h2>
+    <section class="contact-grid">
+      <!-- Form -> posts to sendMail.php -->
+      <form id="contactForm" class="contact-card" method="POST" action="sendMail.php" autocomplete="on">
+        <h2>Send a message</h2>
 
-      <!-- Honeypot (bots fill this; humans never see it) -->
-      <input type="text" id="trap" name="trap" style="display:none;" tabindex="-1" autocomplete="off" />
+        <!-- Honeypot (bots fill this; humans never see it) -->
+        <input type="text" id="trap" name="trap" style="display:none;" tabindex="-1" autocomplete="off" />
 
-      <!-- Optional: helpful context on your end -->
-      <input type="hidden" id="page_source" name="page_source" value="RA Portfolio Contact" />
+        <!-- Optional: helpful context on your end -->
+        <input type="hidden" id="page_source" name="page_source" value="RA Portfolio Contact" />
 
-      <label class="input-label" for="name">Your name</label>
-      <input class="input-box" id="name" name="name" type="text" placeholder="Jerry Maguire" required>
+        <label class="input-label" for="name">Your name</label>
+        <input class="input-box" id="name" name="name" type="text" placeholder="Lou Bloom" required>
 
-      <label class="input-label" for="email">Your email</label>
-      <input class="input-box" id="email" name="email" type="email" placeholder="you@example.com" required>
+        <!-- Question mark link -->
+        <span id="questionMark" class="question-mark">?</span>
 
-      <label class="input-label" for="message">Message</label>
-      <textarea class="input-box textarea" id="message" name="message" rows="6" placeholder="Write your message here" required></textarea>
+        <!-- Movie Poster Pop-up -->
+        <div id="movie-popup" class="mac-popup">
+          <div class="mac-header">
+            <span class="mac-title">Night Crawler (Movie Poster)</span>
+            <button id="close-popup" class="close-btn">✖</button>
+          </div>
 
-      <!-- simple +/– verification (front-end check only) -->
-      <div class="captcha-row">
-        <span id="captchaQuestion" class="captcha-q">5 + 7 = ?</span>
-        <input class="input-box captcha-input" id="captchaAnswer" type="number" inputmode="numeric" placeholder="Answer" required>
-      </div>
-      <p id="formStatus" class="form-status" aria-live="polite"></p>
-
-      <button type="submit" class="button" style="width:100%;"><span>Send Message</span></button>
-    </form>
-
-    <!-- Reveal email after a quick check (optional, not used by PHP) -->
-    <div class="contact-card alt">
-      <h2>Prefer email first?</h2>
-      <p class="small-grey">Solve a question to reveal my address.</p>
-
-      <div class="captcha-reveal">
-        <span id="revealQuestion" class="captcha-q">3 − 1 = ?</span>
-        <input class="input-box captcha-input" id="revealAnswer" type="number" inputmode="numeric" placeholder="Answer">
-        <button id="revealBtn" class="button"><span>Reveal</span></button>
-      </div>
-
-      <div id="emailReveal" class="email-reveal" hidden>
-        <div class="email-chip">
-          <i class="fa-regular fa-envelope"></i>
-          <!-- CHANGE THIS to your real email -->
-          <span id="myEmail">reyanarshad36@gmail.com</span>
-          <button id="copyEmail" class="chip-copy" title="Copy email"><i class="fa-regular fa-clone"></i></button>
+          <!-- Movie Poster Image -->
+          <div class="animation-box">
+            <img src="https://image.tmdb.org/t/p/original/79608fSvB6mW7XLtFjQU166z6DI.jpg" alt="Night Crawler Poster" width="250"
+              height="350">
+          </div>
         </div>
-        <p class="tiny-note">Note: Include “Portfolio Contact” in the subject for faster replies.</p>
+
+
+        <label class="input-label" for="email">Your email</label>
+        <input class="input-box" id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label class="input-label" for="message">Message</label>
+        <textarea class="input-box textarea" id="message" name="message" rows="6" placeholder="Write your message here"
+          required></textarea>
+
+        <!-- simple +/– verification (front-end check only) -->
+        <div class="captcha-row">
+          <span id="captchaQuestion" class="captcha-q">5 + 7 = ?</span>
+          <input class="input-box captcha-input" id="captchaAnswer" type="number" inputmode="numeric"
+            placeholder="Answer" required>
+        </div>
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+
+        <button type="submit" class="button" style="width:100%;"><span>Send Message</span></button>
+      </form>
+
+      <!-- Reveal email after a quick check (optional, not used by PHP) -->
+      <div class="contact-card alt">
+        <h2>Prefer email first?</h2>
+        <p class="small-grey">Solve a question to reveal my address.</p>
+
+        <div class="captcha-reveal">
+          <span id="revealQuestion" class="captcha-q">3 − 1 = ?</span>
+          <input class="input-box captcha-input" id="revealAnswer" type="number" inputmode="numeric"
+            placeholder="Answer">
+          <button id="revealBtn" class="button"><span>Reveal</span></button>
+        </div>
+
+        <div id="emailReveal" class="email-reveal" hidden>
+          <div class="email-chip">
+            <i class="fa-regular fa-envelope"></i>
+            <!-- CHANGE THIS to your real email -->
+            <span id="myEmail">reyanarshad36@gmail.com</span>
+            <button id="copyEmail" class="chip-copy" title="Copy email"><i class="fa-regular fa-clone"></i></button>
+          </div>
+          <p class="tiny-note">Note: Include “Portfolio Contact” in the subject for faster replies.</p>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
 
   <!-- Your script -->
   <script src="contact.js"></script>
 </body>
+
 </html>

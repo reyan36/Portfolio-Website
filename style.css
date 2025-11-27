@@ -253,10 +253,7 @@ p {
 
 p span {
   display: block;
-  /* forces new line for the span */
   margin-top: 1rem;
-  /* optional spacing between the two sections */
-
 }
 
 

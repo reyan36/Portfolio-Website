@@ -148,3 +148,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+// Select the question mark element and popup
+const questionMark = document.getElementById('questionMark');
+const moviePopup = document.getElementById('movie-popup');
+const closePopup = document.getElementById('close-popup');
+
+// When the question mark is clicked, show the popup
+questionMark.addEventListener('click', () => {
+  moviePopup.classList.add('show');
+});
+
+// Close the popup when the close button is clicked
+closePopup.addEventListener('click', () => {
+  moviePopup.classList.remove('show');
+});

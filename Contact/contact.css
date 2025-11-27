@@ -191,3 +191,61 @@ html, body {
 .home-link:hover {
   text-decoration: underline;  /* Optional hover effect */
 }
+/* Styling for question mark */
+.question-mark {
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.question-mark:hover {
+  color: #000;
+}
+
+/* Pop-up styling (same as the one you've already defined) */
+.mac-popup {
+  background: white;
+  border: 3px solid black;
+  box-shadow: 4px 4px 0 black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.25s ease;
+  z-index: 999;
+  font-family: sans-serif;
+}
+
+.mac-header {
+  background: #e5e5e5;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid black;
+}
+
+.mac-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+.close-btn {
+  background: white;
+  border: 2px solid black;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.animation-box {
+  width: 250px;
+  height: 350px;
+  background-size: contain;
+}
+
+/* Popup Visible */
+.mac-popup.show {
+  transform: translate(-50%, -50%) scale(1);
+}
