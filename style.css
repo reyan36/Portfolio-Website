@@ -598,3 +598,117 @@ p span {
     transform-origin: 110px 70px;
     animation: typeRight 0.6s infinite;
 }
+/* --- MUSIC WIDGET REFINED --- */
+.music-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 900;
+  width: auto;
+  max-width: 250px; /* Maximum desktop width */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.music-widget:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+}
+
+/* Equalizer Animation */
+.equalizer {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+  height: 15px;
+  flex-shrink: 0; /* Prevents equalizer from squishing */
+}
+
+.bar {
+  width: 3px;
+  background: #000;
+  animation: equalize 1s infinite alternate;
+}
+
+.bar:nth-child(1) { height: 60%; animation-delay: -0.2s; }
+.bar:nth-child(2) { height: 100%; animation-delay: -0.4s; }
+.bar:nth-child(3) { height: 80%; animation-delay: -0.6s; }
+
+.equalizer.paused .bar {
+  animation: none;
+  height: 3px;
+}
+
+@keyframes equalize {
+  0% { height: 20%; }
+  100% { height: 100%; }
+}
+
+/* Text Info (Refined for overflow) */
+.music-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Hides text if it gets too long */
+  min-width: 0; /* Flexbox hack to allow text truncation */
+}
+
+.music-label {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+.track-scroller {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #000;
+  text-transform: uppercase;
+  
+  /* The Fix for Long Names: */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." if name is too long */
+  display: block;
+}
+
+/* --- MOBILE RESPONSIVE FIX (Updated) --- */
+@media (max-width: 768px) {
+  .music-widget {
+    /* Changed from 15px to 85px to clear the social icons */
+    bottom: 85px;      
+    right: 15px;       
+    padding: 6px 10px; 
+    max-width: 160px;  
+    border-width: 1.5px;
+    box-shadow: 3px 3px 0 #000;
+  }
+
+  .music-label {
+    font-size: 0.55rem; 
+  }
+
+  .track-scroller {
+    font-size: 0.75rem; 
+  }
+
+  .equalizer {
+    height: 12px; 
+  }
+  
+  .bar {
+    width: 2px; 
+  }
+}
