@@ -50,3 +50,14 @@ if (hamburger && navMenu) {
     });
   });
 }
+// --- AUTO-COUNTER LOGIC ---
+document.addEventListener("DOMContentLoaded", () => {
+  const tableRows = document.querySelectorAll("tbody tr");
+  const countDisplay = document.getElementById("articleCount");
+
+  if (countDisplay) {
+    const count = tableRows.length;
+    // Adds a zero if less than 10 (e.g., "09")
+    countDisplay.innerText = count < 10 ? `0${count}` : count;
+  }
+});

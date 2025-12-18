@@ -467,3 +467,19 @@ html, body {
 .home-link:hover {
   text-decoration: underline;  /* Optional hover effect */
 }
+/* --- ARTICLE COUNTER --- */
+.article-subtitle {
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: -20px; /* Pulls it closer to the title */
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#articleCount {
+  color: #555; /* Make the number darker */
+  padding-bottom: 2px;
+}
