@@ -322,34 +322,95 @@ html, body {
 
 
 
-/* Winner card if needed */
 
-/* .winner-card {
-  border: 2px solid #FFD700 !important; 
-  position: relative; 
-  background: linear-gradient(to bottom right, #fff, #fffcf0); 
+/* --- ENHANCED JUDGE CARD (Royal Blue Authority) --- */
+
+/* 1. The Card: A "Heavy" Card with a 3D Bottom Shadow */
+.judge-card {
+  position: relative;
+  /* Solid Royal Blue Border */
+  border: 2px solid #2563eb !important; 
+  /* Subtle gradient background (White to very faint blue) */
+  background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
+  /* The "Hard" shadow creates a physical, official feeling */
+
+  z-index: 1;
 }
 
-.winner-label {
+/* 2. Hover: Card lifts up, shadow grows */
+.judge-card:hover {
+  transform: translateY(-5px);
+  /* Rich Royal Blue Shadow */
+  box-shadow: 0 10px 30px rgba(38, 95, 219, 0.562); 
+  /* Deep Navy Border */
+  border-color: #1a4ebd !important; 
+}
+
+/* 3. The Badge: Premium Gradient & Shimmer */
+.judge-label {
   position: absolute;
-  top: -14px;
+  top: -16px;
   right: 15px;
-  background-color: #FFD700; 
-  color: #000;
+  /* Gradient from Deep Navy to Bright Blue */
+  background: linear-gradient(135deg, #172554 0%, #2563eb 100%);
+  color: #fff;
   font-family: "Space Grotesk", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 0.85rem;
-  padding: 6px 14px;
-  border-radius: 50px;
-  border: 2px solid #000;
-  box-shadow: 3px 3px 0 #000;
+  padding: 8px 18px;
+  border-radius: 6px; 
+  /* White border to separate from card */
+  border: 2px solid #fff; 
+  /* Soft glow behind the badge */
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
   z-index: 10;
-  transform: rotate(3deg); 
+  letter-spacing: 0.5px;
+  overflow: hidden;
 }
 
-.winner-card .hack-badge {
-  background-color: #FFD700 !important;
-  color: #000 !important;
-  border-color: #000 !important;
-  font-weight: bold;
-} */
+/* Subtle Shimmer on the Judge Badge */
+.judge-label::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+  animation: judgeShimmer 4s infinite;
+}
+
+.judge-label i {
+  margin-right: 8px;
+  color: #bfdbfe; /* Light Ice Blue icon */
+}
+
+/* 4. Highlight the Role Text */
+.highlight-judge {
+  color: #1e3a8a; /* Deep Navy Text */
+  background-color: #dbeafe; /* Light Blue BG */
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* 5. "Pending" Certificate Button */
+.btn-pending {
+  background-color: #f1f5f9 !important; /* Light Grey */
+  color: #64748b !important; /* Slate Text */
+  border: 1px dashed #cbd5e1 !important; /* Dashed border implies "waiting" */
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.btn-pending:hover {
+  background-color: #f1f5f9 !important;
+  color: #64748b !important;
+  transform: none !important;
+}
+
+/* Animation Keyframes */
+@keyframes judgeShimmer {
+  0% { left: -100%; }
+  20% { left: 200%; } /* Fast pass */
+  100% { left: 200%; } /* Long pause */
+}
