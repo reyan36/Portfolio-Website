@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <link rel="shortcut icon" href="../favicon-32x32.png" type="image/x-icon">
 
   <!-- Your stylesheet -->
@@ -397,18 +396,22 @@
         const cards = document.querySelectorAll('.hack-card');
         const input = document.getElementById('searchHack');
 
+        // Pre-cache card data so we never re-query the DOM during filtering
+        const cardData = Array.from(cards).map(c => ({
+          el: c,
+          type: c.getAttribute('data-type'),
+          text: ((c.getAttribute('data-keywords') || '') + ' ' +
+                 (c.querySelector('.hack-name')?.textContent || '')).toLowerCase()
+        }));
+
         let active = 'all';
         function applyFilter() {
           const q = (input?.value || '').toLowerCase();
-          cards.forEach(c => {
-            const type = c.getAttribute('data-type');
-            const keys = (c.getAttribute('data-keywords') || '').toLowerCase();
-            const name = c.querySelector('.hack-name')?.textContent.toLowerCase() || '';
-            const txt = [keys, name].join(' ');
-            const typeMatch = (active === 'all') || (type === active);
-            const textMatch = !q || txt.includes(q);
-            c.style.display = (typeMatch && textMatch) ? '' : 'none';
-          });
+          for (let i = 0; i < cardData.length; i++) {
+            const d = cardData[i];
+            const show = (active === 'all' || d.type === active) && (!q || d.text.includes(q));
+            d.el.style.display = show ? '' : 'none';
+          }
         }
 
         pills.forEach(p => p.addEventListener('click', () => {
@@ -418,7 +421,12 @@
           applyFilter();
         }));
 
-        input?.addEventListener('input', applyFilter);
+        // Debounce search input
+        let searchTimer;
+        input?.addEventListener('input', () => {
+          clearTimeout(searchTimer);
+          searchTimer = setTimeout(applyFilter, 150);
+        });
       </script>
 
       <!-- Your script -->
