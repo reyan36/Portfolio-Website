@@ -187,7 +187,7 @@ body, html { margin:0; padding:0; height:100%; color:#ffff; }
   will-change: transform;
   contain: layout style;
 }
-.hack-card {
+.hack-card:not(.judge-card) {
   content-visibility: auto;
   contain-intrinsic-size: auto 280px;
 }
