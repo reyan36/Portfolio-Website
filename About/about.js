@@ -1,3 +1,4 @@
+/* Custom cursor */
 const dot = document.querySelector(".cursor-dot");
 const trail = document.querySelector(".cursor-trail");
 let x = 0, y = 0;
@@ -25,26 +26,6 @@ if (dot && trail) {
   }
 }
 
-
-// SEARCH FUNCTIONALITY (debounced + cached)
-const searchInput = document.getElementById("searchInput");
-const rows = document.querySelectorAll("tbody tr");
-const rowData = Array.from(rows).map(row => ({
-  el: row,
-  text: row.children[0].textContent.toLowerCase()
-}));
-let searchTimer;
-searchInput.addEventListener("input", function () {
-  clearTimeout(searchTimer);
-  searchTimer = setTimeout(() => {
-    const filter = searchInput.value.toLowerCase();
-    for (let i = 0; i < rowData.length; i++) {
-      rowData[i].el.style.display = rowData[i].text.includes(filter) ? "" : "none";
-    }
-  }, 150);
-});
-
-
 /* Responsive hamburger menu */
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-right");
@@ -62,14 +43,3 @@ if (hamburger && navMenu) {
     });
   });
 }
-// --- AUTO-COUNTER LOGIC ---
-document.addEventListener("DOMContentLoaded", () => {
-  const tableRows = document.querySelectorAll("tbody tr");
-  const countDisplay = document.getElementById("articleCount");
-
-  if (countDisplay) {
-    const count = tableRows.length;
-    // Adds a zero if less than 10 (e.g., "09")
-    countDisplay.innerText = count < 10 ? `0${count}` : count;
-  }
-});

@@ -70,7 +70,7 @@ body {
   opacity: 0.6;
   /* line visibility */
   pointer-events: none;
-  animation: fadeGrid 3s infinite alternate;
+  /* animation removed for performance */
 }
 
 .simple-navbar {

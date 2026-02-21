@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | RA</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="shortcut icon" href="../favicon-32x32.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="projects.css">
+</head>
+
+<body class="grid-background">
+  <!-- custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>
+
+  <!-- NAVBAR -->
+  <nav class="simple-navbar">
+    <div class="nav-left">
+      <a href="../index.html" class="home-link">RA</a>
+      <span class="sub-text">PORTFOLIO'26</span>
+    </div>
+
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-right">
+      <li><a href="/About/about.html">About</a></li>
+      <li><a href="/Achievements/achievements.html">Achievements</a></li>
+      <li><a href="/Projects/projects.html">Projects</a></li>
+      <li><a href="/Hackathons/hackathons.html">Hackathons</a></li>
+      <li><a href="/Articles/article.html">Articles</a></li>
+      <li><a href="/Contact/contact.html">Contact</a></li>
+      <li><a href="/Reyan Arshad Resume.pdf" class="button"><span class="button-span">Resume</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <section class="proj-section">
+    <header class="proj-header">
+      <h1 class="proj-title">Projects</h1>
+      <p class="proj-sub">Some of my favourite things I've built.</p>
+
+      <div class="proj-controls">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchProj" placeholder="Search project name, tech...">
+        </div>
+        <div class="filter-pills">
+          <button class="pill active" data-filter="all">All</button>
+          <button class="pill" data-filter="web">Web</button>
+          <button class="pill" data-filter="ai">AI / ML</button>
+          <button class="pill" data-filter="tool">Tool</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cards grid -->
+    <div class="proj-grid" id="projGrid">
+
+      <!-- PROJECT - DAIY -->
+      <article class="proj-card" data-type="web" data-keywords="daiy firebase next.js ai discover adapt invent">
+        <h3 class="proj-name">DAIY</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Feb 2026</p>
+        <p class="proj-desc">Discover Adapt Invent Yourself.</p>
+        <div class="proj-tags">
+          <span>Firebase</span><span>Next.js</span><span>Vercel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://daiy.vercel.app" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i>
+            Demo</a>
+          <a href="https://github.com/reyan36/DAIY" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.youtube.com/watch?v=IDSlsNmJQXE" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-play"></i> Video</a>
+        </div>
+      </article>
+
+      <!-- PROJECT - Color Bridge -->
+      <article class="proj-card" data-type="tool"
+        data-keywords="color bridge logitech c# plugin mx creative console color studio">
+        <h3 class="proj-name">Color Bridge</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Feb 2026</p>
+        <p class="proj-desc">Turn your MX Creative Console into a Color Studio.</p>
+        <div class="proj-tags">
+          <span>C#</span><span>Plugin</span><span>Vercel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://color-bridge.vercel.app/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/ColorBridge" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.youtube.com/watch?v=RLZL3CApXHo" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-play"></i> Video</a>
+        </div>
+      </article>
+
+      <!-- PROJECT - CertCat -->
+      <article class="proj-card" data-type="web" data-keywords="certcat frostbyte firebase next.js react certificates">
+        <h3 class="proj-name">CertCat</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Feb 2026</p>
+        <p class="proj-desc">Beautiful Certificates Delivered Instantly.</p>
+        <div class="proj-tags">
+          <span>Firebase</span><span>Next.js</span><span>React</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://certcat.vercel.app/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/CertCat" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.youtube.com/watch?v=tJQd1msc7Fk" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-play"></i> Video</a>
+        </div>
+      </article>
+
+      <!-- PROJECT - Laaame -->
+      <article class="proj-card" data-type="web"
+        data-keywords="laaame frisco javascript css web audio game endless run">
+        <h3 class="proj-name">Laaame</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Feb 2026</p>
+        <p class="proj-desc">Slipping's Jimmy Endless Run Game.</p>
+        <div class="proj-tags">
+          <span>JavaScript</span><span>Web Audio</span><span>CSS</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://laaame.vercel.app" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/Laaame" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.youtube.com/watch?v=p393o4B2_ZM" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-play"></i> Video</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 1 — Moray (Octopus Hackathon) -->
+      <article class="proj-card" data-type="web" data-keywords="firebase omdb movie tracker vercel">
+        <h3 class="proj-name">Moray</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Feb 2026</p>
+        <p class="proj-desc">Track what you watch. A movie tracking app built with Firebase & OMDb API.</p>
+        <div class="proj-tags">
+          <span>Firebase</span><span>OMDb</span><span>Vercel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://morayio.vercel.app/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/Moray" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.youtube.com/watch?v=nAhyaMhulVc" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-play"></i> Video</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 — Appnort -->
+      <article class="proj-card" data-type="tool" data-keywords="python groq audit windows software">
+        <h3 class="proj-name">Appnort</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Feb 2026</p>
+        <p class="proj-desc">Software audit tool for Windows. Scans installed apps and gives AI-powered insights.</p>
+        <div class="proj-tags">
+          <span>Python</span><span>Groq</span><span>Vercel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://appnort.vercel.app" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/Appnort" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 3 — Neski -->
+      <article class="proj-card" data-type="web" data-keywords="supabase docker neighbors community">
+        <h3 class="proj-name">Neski</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Jan 2026</p>
+        <p class="proj-desc">Connect Neighbors. Share Skills. Trade Time. A community skill-sharing platform.</p>
+        <div class="proj-tags">
+          <span>SupaBase</span><span>Docker</span><span>Vercel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://neski.vercel.app" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i>
+            Demo</a>
+          <a href="https://github.com/reyan36/Neski" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </article>
+
+      <!-- PROJECT - BIFlowQ -->
+      <article class="proj-card" data-type="ai" data-keywords="biflowq qubic ai multi agent decentralized">
+        <h3 class="proj-name">BIFlowQ</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Dec 2025</p>
+        <p class="proj-desc">Multi Agent AI platform built on top of the Qubic decentralized network.</p>
+        <div class="proj-tags">
+          <span>Qubic</span><span>AI</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://8x425h-3000.csb.app/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/BCBLearning/BIFlowQ" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://lablab.ai/event/qubic-hack-the-future/besmainfo-ai/biflowq" target="_blank"
+            rel="noopener noreferrer"><i class="fa-solid fa-play"></i> Video</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 4 — Downloads Organizer -->
+      <article class="proj-card" data-type="tool" data-keywords="python watchdog automation downloads">
+        <h3 class="proj-name">Downloads Organizer</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Dec 2025</p>
+        <p class="proj-desc">Automated downloads organizer for everyone. Sorts files by type as they download.</p>
+        <div class="proj-tags">
+          <span>Python</span><span>WatchDog</span><span>Vercel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://downloadsorganizer.vercel.app/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/Downloads-Organizer" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://youtu.be/hS93BTOJNqU" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-play"></i> Video</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 5 — FAQ Mate -->
+      <article class="proj-card" data-type="ai" data-keywords="ibm watsonx orchestrate faq assistant ai">
+        <h3 class="proj-name">FAQ Mate</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Nov 2025</p>
+        <p class="proj-desc">Smart FAQ assistant built with IBM Watsonx Orchestrate for businesses.</p>
+        <div class="proj-tags">
+          <span>IBM Orchestrate</span><span>Vercel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://faq-mate.vercel.app/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/FAQ-Mate" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 6 — Lexiverse Legal Translator -->
+      <article class="proj-card" data-type="ai" data-keywords="gemini python legal translation arabic ai">
+        <h3 class="proj-name">Lexiverse Legal Translator</h3>
+        <p class="proj-meta"><i class="fa-regular fa-calendar"></i> Nov 2025</p>
+        <p class="proj-desc">Web app that provides accurate translations of English legal texts into Arabic using Gemini
+          AI.</p>
+        <div class="proj-tags">
+          <span>Gemini</span><span>Python</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://lexiverselegaltranslator.vercel.app/" target="_blank" rel="noopener noreferrer"><i
+              class="fa-solid fa-globe"></i> Demo</a>
+          <a href="https://github.com/reyan36/lexiverselegaltranslator" target="_blank" rel="noopener noreferrer"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </article>
+
+      <!-- Add more projects here in the same pattern -->
+
+    </div>
+  </section>
+
+  <!-- Filter + Search script -->
+  <script>
+    const pills = document.querySelectorAll('.pill');
+    const cards = document.querySelectorAll('.proj-card');
+    const input = document.getElementById('searchProj');
+
+    const cardData = Array.from(cards).map(c => ({
+      el: c,
+      type: c.getAttribute('data-type'),
+      text: ((c.getAttribute('data-keywords') || '') + ' ' +
+        (c.querySelector('.proj-name')?.textContent || '')).toLowerCase()
+    }));
+
+    let active = 'all';
+    function applyFilter() {
+      const q = (input?.value || '').toLowerCase();
+      for (let i = 0; i < cardData.length; i++) {
+        const d = cardData[i];
+        const show = (active === 'all' || d.type === active) && (!q || d.text.includes(q));
+        d.el.style.display = show ? '' : 'none';
+      }
+    }
+
+    pills.forEach(p => p.addEventListener('click', () => {
+      pills.forEach(pp => pp.classList.remove('active'));
+      p.classList.add('active');
+      active = p.getAttribute('data-filter');
+      applyFilter();
+    }));
+
+    let searchTimer;
+    input?.addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(applyFilter, 150);
+    });
+  </script>
+
+  <script src="projects.js"></script>
+</body>
+
+</html>
