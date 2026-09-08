@@ -287,6 +287,7 @@ body { cursor: none; }
 
 /* ========== GALLERY BUTTON ========== */
 
+.proj-links .gallery-btn,
 .gallery-btn {
   text-decoration: none;
   display: inline-flex;
@@ -297,13 +298,16 @@ body { cursor: none; }
   background: #151515;
   color: #fff;
   font-weight: 600;
-  transition: background 0.2s ease, transform 0.15s ease;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
   border: none;
+  outline: none;
   cursor: pointer;
-  font-size: inherit;
-  font-family: inherit;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
+.proj-links .gallery-btn:hover,
 .gallery-btn:hover {
   background: #000;
   transform: translateY(-1px);
