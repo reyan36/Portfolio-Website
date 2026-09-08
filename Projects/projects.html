@@ -67,6 +67,100 @@
     <!-- Cards grid -->
     <div class="proj-grid" id="projGrid">
 
+      <!-- ============================================== -->
+      <!--              SKELETON LOADERS                  -->
+      <!-- ============================================== -->
+      <div class="skeleton-card">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-desc"></div>
+        <div class="skeleton-tags">
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+        </div>
+        <div class="skeleton-btns">
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-desc"></div>
+        <div class="skeleton-tags">
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+        </div>
+        <div class="skeleton-btns">
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-desc"></div>
+        <div class="skeleton-tags">
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+        </div>
+        <div class="skeleton-btns">
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-desc"></div>
+        <div class="skeleton-tags">
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+        </div>
+        <div class="skeleton-btns">
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-desc"></div>
+        <div class="skeleton-tags">
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+        </div>
+        <div class="skeleton-btns">
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-desc"></div>
+        <div class="skeleton-tags">
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-tag"></div>
+        </div>
+        <div class="skeleton-btns">
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+          <div class="skeleton-line skeleton-btn"></div>
+        </div>
+      </div>
+
       <!-- PROJECT - DAIY -->
       <article class="proj-card" data-type="web" data-keywords="daiy firebase next.js ai discover adapt invent">
         <h3 class="proj-name">DAIY</h3>
@@ -264,6 +358,27 @@
 
     </div>
   </section>
+
+  <!-- GALLERY MODAL -->
+  <div class="gallery-overlay" id="galleryOverlay" role="dialog" aria-modal="true" aria-label="Image Gallery">
+    <button type="button" class="gallery-close" onclick="closeGallery()" aria-label="Close Gallery">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button type="button" class="gallery-arrow gallery-prev" onclick="galleryNav(-1)" aria-label="Previous Image">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button type="button" class="gallery-arrow gallery-next" onclick="galleryNav(1)" aria-label="Next Image">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="gallery-body">
+      <div class="gallery-main">
+        <div class="gallery-spinner" id="gallerySpinner"></div>
+        <img id="galleryImg" src="" alt="Gallery Preview" />
+      </div>
+      <div class="gallery-counter" id="galleryCounter"></div>
+      <div class="gallery-thumbs" id="galleryThumbs"></div>
+    </div>
+  </div>
 
   <!-- Filter + Search script -->
   <script>
