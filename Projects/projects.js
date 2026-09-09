@@ -81,6 +81,7 @@ function openGallery(btn) {
   const overlay = document.getElementById('galleryOverlay');
   if (overlay) overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
+  document.body.classList.add('gallery-open');
 
   // Toggle arrows & thumbnails based on image count
   const prevArrow = document.querySelector('.gallery-prev');
@@ -102,6 +103,7 @@ function closeGallery() {
   const overlay = document.getElementById('galleryOverlay');
   if (overlay) overlay.classList.remove('active');
   document.body.style.overflow = '';
+  document.body.classList.remove('gallery-open');
 }
 
 function galleryNav(dir) {
