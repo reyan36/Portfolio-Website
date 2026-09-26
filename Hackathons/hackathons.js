@@ -188,3 +188,87 @@ document.addEventListener('touchend', (e) => {
     galleryNav(diff > 0 ? -1 : 1);
   }
 });
+
+/* ========== Video Modal (DevStudio 2026 by Logitech) ========== */
+const PHASE1_URL = 'https://www.youtube.com/embed/RLZL3CApXHo';
+const PHASE2_URL = 'https://www.youtube.com/embed/U-4ly7aRNjk';
+
+// Resolve 'phase1'/'phase2' tokens to actual embed URLs
+function resolveVideoUrl(token) {
+  if (token === 'phase1') return PHASE1_URL;
+  if (token === 'phase2') return PHASE2_URL;
+  return token; // fall back to raw URL if passed directly
+}
+
+// Show skeleton, set iframe src — hide skeleton when iframe loads
+function loadVideoSrc(url) {
+  const iframe = document.getElementById('videoIframe');
+  const skeleton = document.getElementById('videoSkeleton');
+  if (!iframe) return;
+
+  // Reset: show skeleton, hide iframe briefly
+  if (skeleton) {
+    skeleton.classList.remove('hidden');
+  }
+  iframe.style.opacity = '0';
+
+  // Once YouTube loads, fade skeleton out and show iframe
+  const onLoaded = () => {
+    if (skeleton) skeleton.classList.add('hidden');
+    iframe.style.opacity = '1';
+    iframe.removeEventListener('load', onLoaded);
+  };
+  iframe.addEventListener('load', onLoaded);
+  iframe.src = url;
+}
+
+function openVideoModal() {
+  const overlay = document.getElementById('videoOverlay');
+  if (!overlay) return;
+
+  // Reset to Phase 1 tab
+  document.querySelectorAll('.video-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === 0);
+  });
+
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.body.classList.add('gallery-open');
+
+  loadVideoSrc(PHASE1_URL);
+}
+
+function closeVideoModal() {
+  const overlay = document.getElementById('videoOverlay');
+  const iframe = document.getElementById('videoIframe');
+  const skeleton = document.getElementById('videoSkeleton');
+  if (!overlay) return;
+
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+  document.body.classList.remove('gallery-open');
+
+  // Stop playback + reset skeleton for next open
+  if (iframe) { iframe.src = ''; iframe.style.opacity = '0'; }
+  if (skeleton) skeleton.classList.remove('hidden');
+}
+
+function switchVideo(btn, token) {
+  document.querySelectorAll('.video-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  loadVideoSrc(resolveVideoUrl(token));
+}
+
+// Close video modal on backdrop click
+document.addEventListener('click', (e) => {
+  const overlay = document.getElementById('videoOverlay');
+  if (!overlay || !overlay.classList.contains('active')) return;
+  if (e.target === overlay) closeVideoModal();
+});
+
+// Close video modal on Escape key
+document.addEventListener('keydown', (e) => {
+  const overlay = document.getElementById('videoOverlay');
+  if (!overlay || !overlay.classList.contains('active')) return;
+  if (e.key === 'Escape') closeVideoModal();
+});
